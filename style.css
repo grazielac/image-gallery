@@ -1,0 +1,107 @@
+/* Desktop (above 800px) */
+@media (min-width: 800px) {
+  #mainDisplay img {
+    width: 60vw;   /* scale relative to viewport */
+    height: auto;  /* maintain aspect ratio */
+  }
+
+  #thumbnailBar {
+    width: 100%;
+  }
+}
+
+/* Mobile (below 800px) */
+@media (max-width: 800px) {
+  #mainDisplay {
+    height: 40vh;  /* keep container smaller */
+  }
+
+  #mainDisplay img {
+    width: 100%;    /* let it shrink naturally */
+    height: auto;
+    object-fit: contain; /* avoids cropping on small screens */
+  }
+
+  #thumbnailBar {
+    width: 100%;
+  }
+}
+
+* {
+  margin: 0;
+}
+
+#mainDisplay img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+#mainDisplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+
+#thumbnailBar {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 20%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+#thumbnailBar img {
+  cursor: pointer;
+  width: 80px;
+  height: auto;
+  flex-shrink: 0;
+  border: 1px solid red;
+  transition: border 0.2s;
+}
+
+#thumbnailBar img.selected {
+  border: 5px solid green;
+}
+
+.left {
+  position: static;
+  background-color: aqua;
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  z-index: 10;
+  transform: translateY(-50%);
+
+}
+
+.right {
+  background-color:red;
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  z-index: 10;
+  transform: translateY(-50%);
+}
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.btn button {
+  border: 2px solid black;
+  border-radius: 6px;
+  
+}
