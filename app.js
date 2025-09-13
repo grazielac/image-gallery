@@ -35,6 +35,7 @@ fullImg.style.display = "block"; // removes small gap
 
 display.appendChild(fullImg);
 
+
 // loop through the images array and create <img> elements
 images.forEach(function (imgObj) {
   const img = document.createElement("img");
